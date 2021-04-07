@@ -97,10 +97,10 @@ We are using transaction whenever the sale of a house is added to the database:
 
 We use AVID for SQLAlchmey's implementation of transactions:
 
-- **(A)** tomic: each transaction adds the entry of one single unit of a house sale;
-- **(C)** onsistent: changes are not visible until all of the changes have been implemented (although the old version of the tables is available);
-- **(I)** solated: all updates occur isolated from the database at first which keeps it intact; 
-- **(D)** urable: all transactions remain committed even if the interruptions happen.
+- **Atomic**: each transaction adds the entry of one single unit of a house sale;
+- **Consistent**: changes are not visible until all of the changes have been implemented (although the old version of the tables is available);
+- **Isolated**: all updates occur isolated from the database at first which keeps it intact; 
+- **Durable**: all transactions remain committed even if the interruptions happen.
 
 
 
