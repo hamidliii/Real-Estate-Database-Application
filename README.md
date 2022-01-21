@@ -1,6 +1,6 @@
 # Real-Estate-Database-Application
 
-In this application, we are building a database system for a large franchised real estate company:
+In this application, I am building a database system for a large franchised real estate company:
 - The company has many offices located all over the country;
 - Each office is responsible for selling houses in a particular area;
 - Real estate agents can be assigned to one or more of the offices;
@@ -81,7 +81,7 @@ Based on the https://www.studytonight.com/dbms/database-normalization.php:
 
 **Indices**
 
-As we are using SQLite, unique key identifiers are automatically indexed and an ordered list of the data within the index's columns are generated. Also, the joins are implemented based on the foreign key constraints using the unique id of another column (so, it is an indexed primary key). Additionally, the covering indexes are implemented for the main four tables since the data in those tables is often looked up. All of the aforementioned ensures efficiency and main requirements are met. Thus, no other additional indices would be significantly impactful on the query performance. 
+As I'm using SQLite, unique key identifiers are automatically indexed and an ordered list of the data within the index's columns are generated. Also, the joins are implemented based on the foreign key constraints using the unique id of another column (so, it is an indexed primary key). Additionally, the covering indexes are implemented for the main four tables since the data in those tables is often looked up. All of the aforementioned ensures efficiency and main requirements are met. Thus, no other additional indices would be significantly impactful on the query performance. 
 
 
 **Transactions**
@@ -90,12 +90,12 @@ To ensure that all necessary edits happening in one go and avoid partial edits i
 - Executed is done using `session.commit()`
 However, if there is an error in the transaction, it rolls back to the previous state without adding the new changes and session is closed with `session.close()` and retires. 
 
-We are using transaction whenever the sale of a house is added to the database:
+I am using transaction whenever the sale of a house is added to the database:
 - A single transaction queries results from the database;
 - It adds an entry to the Sale table based on the matched House id;
 - It adds an entry to the commission table based on the Sale id. 
 
-We use AVID for SQLAlchmey's implementation of transactions:
+I use AVID for SQLAlchmey's implementation of transactions:
 
 - **Atomic**: each transaction adds the entry of one single unit of a house sale;
 - **Consistent**: changes are not visible until all of the changes have been implemented (although the old version of the tables is available);
